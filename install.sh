@@ -8,6 +8,7 @@ fi
 
 #-> Go to the directory of this script
 cd "$(dirname "${BASH_SOURCE[0]}")"
+QNI_LED_DRIVER_DIR=$(pwd)
 
 #-> Clone led driver and screen capture repos
 git clone https://github.com/arduino12/rpi-rgb-led-matrix.git

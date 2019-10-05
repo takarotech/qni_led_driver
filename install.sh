@@ -32,3 +32,6 @@ make
 
 #-> Set qni_led_server to run on specific cpu core
 sudo sed -i '1s/^/isolcpus=3 /' /boot/cmdline.txt
+
+#-> Add to autostart
+echo @$QNI_LED_DRIVER_DIR/run_qni_led_driver.sh >> $HOME/.config/lxsession/LXDE-pi/autostart

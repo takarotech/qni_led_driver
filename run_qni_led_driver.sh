@@ -17,6 +17,6 @@ fi
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 #-> Run qni_led_driver with arguments
-sudo $QNI_LED_DRIVER_BIN qni_v0.cfg --led-pixel-mapper=Snake:2 --led-pwm-bits=8 --led-brightness=90 --led-pwm-lsb-nanoseconds 400 "$@"
-#sudo $QNI_LED_DRIVER_BIN qni_v1.cfg --led-gpio-mapping=free-i2c --led-multiplexing=4 --led-pixel-mapper=Snake:3 --led-pwm-bits=8 --led-brightness=90 --led-slowdown-gpio=2 --led-pwm-lsb-nanoseconds 500 "$@"
-#sudo $QNI_LED_DRIVER_BIN qni_v2.cfg --led-gpio-mapping=free-i2c --led-multiplexing=4 --led-pixel-mapper=Snake:2 --led-pwm-bits=8 --led-brightness=90 --led-slowdown-gpio=3 --led-pwm-lsb-nanoseconds 500 "$@"
+HW_VERSION=$(grep -oP '"hw_version": *\K[^,]' ~/qni_conf.json)
+ARGS=$(grep -oP 'args = "\K.*[^";]' ./qni_v0.cfg)
+sudo $QNI_LED_DRIVER_BIN qni_v$HW_VERSION.cfg $ARGS

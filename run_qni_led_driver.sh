@@ -7,7 +7,7 @@ if (( EUID == 0 )); then
 fi
 
 #-> Make sure the driver is not running yet
-QNI_LED_DRIVER_BIN=rpi-fb-matrix/rpi-fb-matrix
+QNI_LED_DRIVER_BIN=./rpi-fb-matrix/rpi-fb-matrix
 if pgrep -f $QNI_LED_DRIVER_BIN > /dev/null; then
 	echo 'Please kill previous led driver!' 1>&2
 	exit 2

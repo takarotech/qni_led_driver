@@ -34,7 +34,7 @@ make
 sudo sed -i '1s/^/isolcpus=3 /' /boot/cmdline.txt
 
 #-> Remove unnecessary processes
-sudo apt remove -y bluez bluez-firmware pi-bluetooth triggerhappy pigpio
+sudo apt purge -y bluez bluez-firmware pi-bluetooth triggerhappy pigpio
 
 #-> Limit resolution because 57=1680x1050 is too high for this driver,
 #   can set to 47=1440x900, 35=1280x1024 4=640x480

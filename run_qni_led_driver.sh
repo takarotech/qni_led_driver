@@ -18,5 +18,5 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 #-> Run qni_led_driver with arguments
 HW_VERSION=$(grep -oP '"hw_version": *\K[^,]' ~/qni_conf.json)
-ARGS=$(grep -oP 'args = "\K.*[^";]' ./qni_v0.cfg)
-sudo $QNI_LED_DRIVER_BIN qni_v$HW_VERSION.cfg $ARGS
+ARGS=$(grep -oP 'args = "\K.*[^";]' ./qni_v$HW_VERSION.cfg)
+sudo $QNI_LED_DRIVER_BIN ./qni_v$HW_VERSION.cfg $ARGS
